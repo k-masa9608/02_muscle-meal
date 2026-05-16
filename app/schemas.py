@@ -11,7 +11,7 @@ class Ingredient(IngredientBase):
     id: int
 
     class Config:
-        from_attributes = True
+        orm_mode = True
 
 
 class RecipeIngredientOut(BaseModel):
@@ -19,7 +19,7 @@ class RecipeIngredientOut(BaseModel):
     amount: Optional[str] = None
 
     class Config:
-        from_attributes = True
+        orm_mode = True
 
 
 class RecipeBase(BaseModel):
@@ -40,7 +40,7 @@ class RecipeOut(RecipeBase):
     score: Optional[float] = None
 
     class Config:
-        from_attributes = True
+        orm_mode = True
 
 
 class SearchRequest(BaseModel):
