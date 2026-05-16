@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>マッスルミール - 筋肉飯レシピ提案</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo">💪 マッスルミール</div>
+      <div class="tagline">高タンパク・低脂質レシピをすぐ見つける</div>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="search-section card">
+      <h2 class="section-title">食材を選択</h2>
+
+      <div class="ingredient-group">
+        <div class="group-label">🥩 タンパク質</div>
+        <div class="btn-group" id="protein-group"></div>
+      </div>
+
+      <div class="ingredient-group">
+        <div class="group-label">🥦 野菜</div>
+        <div class="btn-group" id="veggie-group"></div>
+      </div>
+
+      <div class="ingredient-group">
+        <div class="group-label">🍚 炭水化物</div>
+        <div class="btn-group" id="carb-group"></div>
+      </div>
+
+      <div class="keyword-row">
+        <input type="text" id="keyword-input" class="keyword-input" placeholder="その他の食材を入力…" />
+        <button class="btn-add" id="keyword-add">追加</button>
+      </div>
+
+      <div id="selected-tags" class="selected-tags"></div>
+
+      <div class="search-actions">
+        <button class="btn-search" id="search-btn">🔍 レシピを検索</button>
+        <button class="btn-reset" id="reset-btn">リセット</button>
+      </div>
+    </section>
+
+    <section id="results-section" class="results-section hidden">
+      <div class="results-header">
+        <h2 class="section-title" id="results-title">検索結果</h2>
+        <div class="sort-note">タンパク質が多く・脂質が少ない順に表示</div>
+      </div>
+      <div id="recipe-list" class="recipe-list"></div>
+    </section>
+
+    <div id="loading" class="loading hidden">
+      <div class="spinner"></div>
+      <p>レシピを検索中…</p>
+    </div>
+
+    <div id="no-results" class="no-results hidden">
+      <p>該当するレシピが見つかりませんでした。<br>別の食材を試してみてください。</p>
+    </div>
+  </main>
+
+  <!-- Recipe Detail Modal -->
+  <div id="modal-overlay" class="modal-overlay hidden">
+    <div class="modal-card">
+      <button class="modal-close" id="modal-close">✕</button>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
